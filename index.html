@@ -11,11 +11,26 @@
 
 <h1>This is my website</h1>
     <script>
-        let x = 0
-        if (x!=true) {
-            alert(x)
+        function add7(num1) {
+            return(num1+7)
         }
+        console.log(add7(3))
 
+        function multiply(num1, num2) {
+            return(num1*num2)
+        }
+        console.log(multiply(3,2))
+        
+        function capitalize(string) {
+        let newstring = string.charAt(0).toUpperCase() + string.slice(1).toLowerCase()
+        return(newstring)
+        }
+        console.log(capitalize("capitalize the first letter of the first word."))
+
+        function lastletter(endstring){
+        return(endstring.slice(-1))
+        }
+        console.log(lastletter("find the last letter of the string"))
     </script>
 </body>
 </html>
