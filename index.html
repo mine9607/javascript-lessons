@@ -9,7 +9,10 @@
 <body>
 
 
-<h1>This is my website</h1>
+    <h1>This is my website</h1>
+    <input class="numberInput" type="text">
+    <p></p>
+
     <script>
         function add7(num1) {
             return(num1+7)
@@ -31,6 +34,55 @@
         return(endstring.slice(-1))
         }
         console.log(lastletter("find the last letter of the string"))
+
+        const input = document.querySelector('.numberInput');
+        const para = document.querySelector('p');
+
+        function squared(num) {
+        return num * num;
+        }
+
+        function cubed(num) {
+        return num * num * num;
+        }
+
+        function factorial(num) {
+        if (num < 0) return undefined;
+        if (num === 0) return 1;
+        let x = num - 1;
+        while (x > 1) {
+            num *= x;
+            x--;
+        }
+        return num;
+        }
+
+        input.addEventListener("change", () => {
+        const num = parseFloat(input.value);
+        if (isNaN(num)) {
+            para.textContent = "You need to enter a number!";
+        } else {
+            para.textContent = `${num} squared is ${squared(num)}. `;
+            para.textContent += `${num} cubed is ${cubed(num)}. `;
+            para.textContent += `${num} factorial is ${factorial(num)}. `;
+        }
+        });
+
+        function alertMessage(){
+            alert("Hi");
+        }
+        alertMessage();
+
+        function promptMessage(){
+            prompt("What did you do today?");
+        }
+        promptMessage()
+
+        function confirmMessage(){
+            confirm("We will charge you $8 to continue.")
+        }
+
+        confirmMessage() 
     </script>
 </body>
 </html>
