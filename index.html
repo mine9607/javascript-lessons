@@ -4,101 +4,11 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Page Title</title>
+    <script src="script.js" defer></script>
+    <title>DOM Manipulation</title>
 </head>
 <body>
-
-
-    <h1>This is my website</h1>
-    <input class="numberInput" type="text">
-    <p></p>
-
-    <script>
-        function add7(num1) {
-            return(num1+7)
-        }
-        console.log(add7(3))
-
-        function multiply(num1, num2) {
-            return(num1*num2)
-        }
-        console.log(multiply(3,2))
-        
-        function capitalize(string) {
-        let newstring = string.charAt(0).toUpperCase() + string.slice(1).toLowerCase()
-        return(newstring)
-        }
-        console.log(capitalize("capitalize the first letter of the first word."))
-
-        function lastletter(endstring){
-        return(endstring.slice(-1))
-        }
-        console.log(lastletter("find the last letter of the string"))
-
-        const input = document.querySelector('.numberInput');
-        const para = document.querySelector('p');
-
-        function squared(num) {
-        return num * num;
-        }
-
-        function cubed(num) {
-        return num * num * num;
-        }
-
-        function factorial(num) {
-        if (num < 0) return undefined;
-        if (num === 0) return 1;
-        let x = num - 1;
-        while (x > 1) {
-            num *= x;
-            x--;
-        }
-        return num;
-        }
-
-        input.addEventListener("change", () => {
-        const num = parseFloat(input.value);
-        if (isNaN(num)) {
-            para.textContent = "You need to enter a number!";
-        } else {
-            para.textContent = `${num} squared is ${squared(num)}. `;
-            para.textContent += `${num} cubed is ${cubed(num)}. `;
-            para.textContent += `${num} factorial is ${factorial(num)}. `;
-        }
-        });
-
-        function alertMessage(){
-            alert("Hi");
-        }
-        alertMessage();
-
-        function promptMessage(){
-            prompt("What did you do today?");
-        }
-        promptMessage()
-
-        function confirmMessage(){
-            confirm("We will charge you $8 to continue.");
-        }
-        confirmMessage() 
-
-        function ask(question, yes, no) {
-        if (confirm(question)) yes()
-        else no();
-        }
-
-        function showOk() {
-        alert( "You agreed." );
-        }
-
-        function showCancel() {
-        alert( "You canceled the execution." );
-        }
-
-        // usage: functions showOk, showCancel are passed as arguments to ask
-        ask("Do you agree?", showOk, showCancel);
-
-    </script>
+    <h1>DOM Manipulation</h1>
+    <div id="container"></div>
 </body>
 </html>
